@@ -29,6 +29,17 @@ body {
   background-position: 0 0, 40px 40px;
 }
 
+/* ---------- Blue polka dot strip at the top ---------- */
+.top-bar {
+  height: 56px;
+  flex-shrink: 0;
+  background-color: #a9d3ef;
+  background-image: radial-gradient(#ffffff 3px, transparent 3.5px);
+  background-size: 20px 20px;
+  border-bottom: 6px solid #ffffff;
+  box-shadow: 0 4px 0 var(--pink);
+}
+
 /* ---------- Main message ---------- */
 .wip {
   flex: 1;
