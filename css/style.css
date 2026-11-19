@@ -1,16 +1,22 @@
 /* ============================================
    Cinnamon Girl Games - main stylesheet
+   Scrapbook style: pastel felt, polka dots, gingham, stitching and buttons.
    Change the colours below to restyle the whole site.
    ============================================ */
 
 :root {
-  --cream: #fff7ef;
-  --peach: #ffe3d3;
-  --pink: #f7b9b4;
-  --cinnamon: #b5643c;
-  --cocoa: #5a3426;
+  --pink: #f6c1cf;
+  --pink-deep: #e98aa6;
+  --pink-pale: #fde7ee;
+  --blue: #a9d3ef;
+  --blue-deep: #6fb2de;
+  --yellow: #fbe7a1;
+  --yellow-deep: #ecc54f;
+  --cream: #fff8ec;
+  --brown: #6b4334;
+  --brown-soft: #9a6a55;
   --white: #ffffff;
-  --radius: 22px;
+  --radius: 26px;
 }
 
 * { box-sizing: border-box; }
@@ -18,22 +24,135 @@
 body {
   margin: 0;
   font-family: "Nunito", system-ui, sans-serif;
-  color: var(--cocoa);
-  background: var(--cream);
-  background-image: radial-gradient(var(--peach) 1.5px, transparent 1.5px);
-  background-size: 22px 22px;
+  color: var(--brown);
   line-height: 1.6;
+  /* pale pink with white polka dots */
+  background-color: var(--pink-pale);
+  background-image:
+    radial-gradient(var(--white) 4px, transparent 4.5px),
+    radial-gradient(var(--white) 4px, transparent 4.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
 }
 
-h1, h2, .logo {
+nav a {
   font-family: "Fredoka", system-ui, sans-serif;
   font-weight: 600;
 }
 
-a { color: var(--cinnamon); }
+/* curly headings: cocoa brown letters with a pink outline */
+h1, h2, .logo {
+  font-family: "Mystery Quest", "Fredoka", cursive;
+  font-weight: 400;
+  color: var(--brown);
+  -webkit-text-stroke: 0.14em var(--pink);
+  paint-order: stroke fill;
+  letter-spacing: 0.02em;
+}
+
+a { color: var(--pink-deep); }
+
+/* ---------- Fabric patches (reusable) ---------- */
+.patch {
+  position: relative;
+  border-radius: var(--radius);
+  /* the "stitching" just inside the edge */
+  outline: 3px dashed rgba(255, 255, 255, 0.95);
+  outline-offset: -12px;
+  box-shadow: 0 6px 0 rgba(107, 67, 52, 0.12), 0 10px 24px rgba(107, 67, 52, 0.12);
+}
+
+.felt-cream { background: var(--cream); outline-color: var(--pink); }
+
+.felt-pink { background: var(--pink); }
+
+.gingham {
+  background-color: #fff6d6;
+  background-image:
+    linear-gradient(90deg, rgba(236, 197, 79, 0.35) 50%, transparent 50%),
+    linear-gradient(rgba(236, 197, 79, 0.35) 50%, transparent 50%);
+  background-size: 24px 24px;
+}
+
+.polka-blue {
+  background-color: var(--blue);
+  background-image:
+    radial-gradient(var(--white) 3px, transparent 3.5px),
+    radial-gradient(var(--white) 3px, transparent 3.5px);
+  background-size: 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
+
+/* ---------- Sewn-on buttons (drawn with CSS) ---------- */
+.sewn-button {
+  --c: var(--pink-deep);
+  display: inline-block;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255,255,255,0.7) 0 12%, transparent 30%),
+    var(--c);
+  box-shadow:
+    inset 0 0 0 5px rgba(255, 255, 255, 0.25),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px rgba(107, 67, 52, 0.25);
+}
+/* four thread holes */
+.sewn-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 40%;
+  height: 40%;
+  background:
+    radial-gradient(circle, rgba(107,67,52,0.55) 0 3px, transparent 3.5px) 0 0 / 50% 50%;
+}
+/* crossed thread */
+.sewn-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 34%;
+  height: 34%;
+  background:
+    linear-gradient(45deg, transparent 44%, var(--white) 44% 56%, transparent 56%),
+    linear-gradient(-45deg, transparent 44%, var(--white) 44% 56%, transparent 56%);
+}
+
+.sewn-button.pink   { --c: var(--pink-deep); }
+.sewn-button.yellow { --c: var(--yellow-deep); }
+.sewn-button.cream  { --c: #f3e3c8; }
+.sewn-button.brown  { --c: #8a5a45; }
+.sewn-button.blue   { --c: var(--blue-deep); }
+
+.sewn-button.small { width: 34px; height: 34px; }
+
+.sewn-button.star {
+  border-radius: 0;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.sewn-button.star::after { display: none; }
+
+.sewn-button.heart {
+  border-radius: 0;
+  clip-path: path("M24 44 C10 34 2 26 2 16 C2 8 8 3 14 3 C19 3 22 6 24 9 C26 6 29 3 34 3 C40 3 46 8 46 16 C46 26 38 34 24 44 Z");
+}
+.sewn-button.heart::after { display: none; }
 
 /* ---------- Header ---------- */
 .site-header {
+  background-color: var(--blue);
+  background-image: radial-gradient(var(--white) 3px, transparent 3.5px);
+  background-size: 20px 20px;
+  border-bottom: 6px solid var(--white);
+  box-shadow: 0 4px 0 var(--pink);
+}
+
+.header-inner {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -41,90 +160,119 @@ a { color: var(--cinnamon); }
   justify-content: space-between;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 18px 16px;
+  padding: 14px 16px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.3rem;
-  color: var(--cocoa);
-  text-decoration: none;
-}
-
-nav { display: flex; gap: 8px; }
-
-nav a {
-  padding: 6px 14px;
+  padding: 4px 18px 4px 8px;
   border-radius: 999px;
   background: var(--white);
-  color: var(--cocoa);
+  font-size: 1.5rem;
   text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 2px 0 var(--peach);
+  outline: 2px dashed var(--pink);
+  outline-offset: -5px;
 }
 
-nav a:hover { background: var(--pink); }
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+
+nav a {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--brown);
+  text-decoration: none;
+  outline: 2px dashed var(--blue);
+  outline-offset: -5px;
+}
+
+nav a:hover { background: var(--yellow); }
 
 /* ---------- Hero ---------- */
 .hero {
-  max-width: 720px;
-  margin: 40px auto 30px;
-  padding: 0 16px;
+  max-width: 760px;
+  margin: 44px auto 36px;
+  padding: 44px 32px 36px;
   text-align: center;
-}
-
-.badge {
-  display: inline-block;
-  margin: 0 0 10px;
-  padding: 4px 16px;
-  border-radius: 999px;
-  background: var(--pink);
-  font-weight: 700;
+  width: calc(100% - 32px);
 }
 
 .hero h1 {
-  margin: 0;
-  font-size: clamp(2.4rem, 8vw, 4.2rem);
+  margin: 6px 0 4px;
   line-height: 1.1;
-  color: var(--cinnamon);
+  font-size: clamp(2.6rem, 9vw, 4.6rem);
 }
 
-.intro { font-size: 1.15rem; }
+.intro { font-size: 1.12rem; margin: 10px auto 0; max-width: 560px; }
+
+.deco { position: absolute; }
+.deco-left  { top: -22px; left: -14px; width: 60px; height: 60px; transform: rotate(-14deg); }
+.deco-right { top: -18px; right: -12px; width: 56px; height: 52px; transform: rotate(10deg); }
+.deco-right.heart { clip-path: path("M28 50 C12 39 2 30 2 18 C2 9 9 3 16 3 C22 3 25 7 28 10 C31 7 34 3 40 3 C47 3 54 9 54 18 C54 30 44 39 28 50 Z"); }
+
+/* "coming soon" label, pixel style to match the copyright notice */
+.tag {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 14px;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--brown-soft);
+  font-family: "Silkscreen", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  outline: 2px dashed var(--pink);
+  outline-offset: -5px;
+}
 
 /* ---------- Cards ---------- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 28px;
   max-width: 1000px;
-  margin: 0 auto 50px;
+  margin: 0 auto 56px;
   padding: 0 16px;
 }
 
 .card {
-  padding: 26px;
-  border-radius: var(--radius);
-  background: var(--white);
-  border: 3px solid var(--peach);
+  padding: 40px 28px 30px;
   text-align: center;
-  scroll-margin-top: 20px;
+  scroll-margin-top: 24px;
+}
+
+.card:nth-child(1) { transform: rotate(-1.2deg); }
+.card:nth-child(2) { transform: rotate(0.8deg); }
+.card:nth-child(3) { transform: rotate(-0.6deg); }
+
+.card .pin {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  margin-left: -22px;
+  width: 44px;
+  height: 44px;
+}
+
+.card h2 {
+  display: inline-block;
+  margin: 4px 0 8px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: var(--white);
+  font-size: 2rem;
+}
+
+.card p {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .emoji { font-size: 2.6rem; }
-
-.card h2 { margin: 6px 0; }
-
-.soon {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 3px 12px;
-  border-radius: 999px;
-  background: var(--peach);
-  font-size: 0.9rem;
-  font-weight: 700;
-}
 
 /* ---------- Footer ---------- */
 .site-footer {
