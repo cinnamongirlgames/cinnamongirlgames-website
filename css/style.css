@@ -1,0 +1,134 @@
+/* ============================================
+   Cinnamon Girl Games - main stylesheet
+   Change the colours below to restyle the whole site.
+   ============================================ */
+
+:root {
+  --cream: #fff7ef;
+  --peach: #ffe3d3;
+  --pink: #f7b9b4;
+  --cinnamon: #b5643c;
+  --cocoa: #5a3426;
+  --white: #ffffff;
+  --radius: 22px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  color: var(--cocoa);
+  background: var(--cream);
+  background-image: radial-gradient(var(--peach) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  line-height: 1.6;
+}
+
+h1, h2, .logo {
+  font-family: "Fredoka", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+a { color: var(--cinnamon); }
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 18px 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  color: var(--cocoa);
+  text-decoration: none;
+}
+
+nav { display: flex; gap: 8px; }
+
+nav a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--cocoa);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 2px 0 var(--peach);
+}
+
+nav a:hover { background: var(--pink); }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 720px;
+  margin: 40px auto 30px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: var(--pink);
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 8vw, 4.2rem);
+  line-height: 1.1;
+  color: var(--cinnamon);
+}
+
+.intro { font-size: 1.15rem; }
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  padding: 0 16px;
+}
+
+.card {
+  padding: 26px;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 3px solid var(--peach);
+  text-align: center;
+  scroll-margin-top: 20px;
+}
+
+.emoji { font-size: 2.6rem; }
+
+.card h2 { margin: 6px 0; }
+
+.soon {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--peach);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 0.95rem;
+}

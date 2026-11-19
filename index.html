@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinnamon Girl Games</title>
+  <meta name="description" content="Cosy little games, videos and an app, made by Cinnamon Girl Games. Coming soon!">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="/">
+      <img src="images/favicon.svg" alt="" width="36" height="36">
+      Cinnamon Girl Games
+    </a>
+    <nav>
+      <a href="#games">Games</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#app">App</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <p class="badge">✨ Coming soon ✨</p>
+      <h1>Cinnamon Girl Games</h1>
+      <p class="intro">
+        Hello and welcome! This is the new home of Cinnamon Girl Games.
+        Cosy little games, videos and an app are on their way.
+        Grab a warm drink and check back soon.
+      </p>
+    </section>
+
+    <section class="cards">
+
+      <article class="card" id="games">
+        <div class="emoji" aria-hidden="true">🎮</div>
+        <h2>Games</h2>
+        <p>Sweet, cosy games are being baked right now. They'll appear here when they're ready.</p>
+        <span class="soon">Coming soon</span>
+      </article>
+
+      <article class="card" id="youtube">
+        <div class="emoji" aria-hidden="true">📺</div>
+        <h2>YouTube</h2>
+        <p>Videos, devlogs and behind-the-scenes peeks. The channel link will go here.</p>
+        <span class="soon">Coming soon</span>
+      </article>
+
+      <article class="card" id="app">
+        <div class="emoji" aria-hidden="true">📱</div>
+        <h2>The App</h2>
+        <p>Something special is in the oven. More news about the app very soon.</p>
+        <span class="soon">Coming soon</span>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with cinnamon and love 🤎 &copy; <span id="year">2026</span> Cinnamon Girl Games</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
