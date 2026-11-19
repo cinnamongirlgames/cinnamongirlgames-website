@@ -43,10 +43,10 @@ body {
 /* brown letters with a pink outline */
 h1, .status {
   margin: 0;
-  font-family: "Fredoka", system-ui, sans-serif;
-  font-weight: 600;
+  font-family: "Quicksand", system-ui, sans-serif;
+  font-weight: 500;
   color: var(--brown);
-  -webkit-text-stroke: 0.16em var(--pink);
+  -webkit-text-stroke: 0.1em var(--pink);
   paint-order: stroke fill;
 }
 
