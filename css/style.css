@@ -66,16 +66,16 @@ body {
 /* little "coming soon" label in pixel font */
 .tag {
   display: inline-block;
-  margin: 0 0 10px;
-  padding: 4px 14px;
-  border-radius: 8px;
+  margin: 0 0 18px;
+  padding: 8px 24px;
+  border-radius: 12px;
   background: #ffffff;
   color: #9a6a55;
   font-family: "Silkscreen", monospace;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  outline: 2px dashed var(--pink);
-  outline-offset: -5px;
+  font-size: clamp(1.1rem, 4vw, 1.8rem);
+  letter-spacing: 0.06em;
+  outline: 3px dashed var(--pink);
+  outline-offset: -7px;
 }
 
 /* brown letters with a pink outline */
